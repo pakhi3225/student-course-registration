@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Course Registration &amp; Feedback – Server-Side Validation</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>🎓 Course Registration &amp; Feedback</h1>
+
+    <form id="regForm" novalidate>
+      <h3>Student details</h3>
+      <div class="row">
+        <div class="field">
+          <label for="studentName">Student Name</label>
+          <input type="text" id="studentName" />
+          <small class="error" data-for="studentName"></small>
+        </div>
+        <div class="field">
+          <label for="prn">PRN (12 digits)</label>
+          <input type="text" id="prn" maxlength="20" placeholder="202101234567" />
+          <small class="error" data-for="prn"></small>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="text" id="email" />
+          <small class="error" data-for="email"></small>
+        </div>
+        <div class="field">
+          <label for="phone">Phone</label>
+          <input type="text" id="phone" />
+          <small class="error" data-for="phone"></small>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" />
+        <small class="error" data-for="dob"></small>
+      </div>
+
+      <h3>Course registration</h3>
+      <div class="row">
+        <div class="field">
+          <label for="department">Department</label>
+          <select id="department"><option value="">-- Select --</option></select>
+          <small class="error" data-for="department"></small>
+        </div>
+        <div class="field">
+          <label for="year">Year</label>
+          <select id="year">
+            <option value="">-- Select --</option>
+            <option value="1">1st Year</option><option value="2">2nd Year</option>
+            <option value="3">3rd Year</option><option value="4">4th Year</option>
+          </select>
+          <small class="error" data-for="year"></small>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="course">Course</label>
+        <select id="course"><option value="">-- Select department first --</option></select>
+        <small class="error" data-for="course"></small>
+      </div>
+
+      <h3>Feedback</h3>
+      <div class="field">
+        <label for="rating">Rating</label>
+        <select id="rating">
+          <option value="">-- Select --</option>
+          <option value="5">5 – Excellent</option><option value="4">4 – Good</option>
+          <option value="3">3 – Average</option><option value="2">2 – Poor</option>
+          <option value="1">1 – Very poor</option>
+        </select>
+        <small class="error" data-for="rating"></small>
+      </div>
+
+      <div class="field">
+        <label for="feedback">Feedback <span class="counter" id="counter">0/300</span></label>
+        <textarea id="feedback" rows="3"></textarea>
+        <small class="error" data-for="feedback"></small>
+      </div>
+
+      <div class="field check">
+        <label><input type="checkbox" id="declaration" /> I confirm the above details are correct</label>
+        <small class="error" data-for="declaration"></small>
+      </div>
+
+      <button type="submit" class="primary">Submit</button>
+      <div id="result" class="result" hidden></div>
+    </form>
+
+    <section class="records">
+      <h2>Registrations <span id="avg" class="muted-inline"></span></h2>
+      <div class="filter">
+        <label for="filterDept">Filter:</label>
+        <select id="filterDept"><option value="">All departments</option></select>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>#</th><th>Name</th><th>PRN</th><th>Course</th><th>Rating</th><th></th></tr></thead>
+          <tbody id="tbody"><tr><td colspan="6" class="muted">No registrations yet.</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <details class="debug">
+      <summary>Last server response (JSON)</summary>
+      <pre id="raw">—</pre>
+    </details>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

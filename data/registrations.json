@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "createdAt": "2026-11-19T10:38:31.405Z",
+    "studentName": "pakhi borkar",
+    "prn": "202401040130",
+    "email": "pakhi@mitaoe.ac.in",
+    "phone": "9234567890",
+    "dob": "2005-03-25",
+    "department": "Computer Science",
+    "year": 3,
+    "course": "Web Technologies",
+    "rating": 5,
+    "feedback": "learned a lot"
+  }
+]

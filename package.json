@@ -1,0 +1,15 @@
+{
+  "name": "student-course-registration-validation",
+  "version": "1.0.0",
+  "description": "Student Course Registration & Feedback app demonstrating server-side validation with Express.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2",
+    "express-validator": "^7.1.0"
+  }
+}
